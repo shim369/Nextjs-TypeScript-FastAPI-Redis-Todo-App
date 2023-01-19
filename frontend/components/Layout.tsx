@@ -14,22 +14,24 @@ export default function Layout({ children, title, description}: Props) {
 				<link rel='icon' href='/favicon.ico' />
 				<title>{ title }</title>
 			</Head>
-			<header>
-				<h1>{ title }</h1>
-			</header>
-			<main className="main">
-				<div className="container">
-					{ children }
-				</div>
-			</main>
-			<footer>
-				©2023 { title }
-			</footer>
+			<div className="wrapper">
+				<header>
+					<h1>{ title }</h1>
+				</header>
+				<main>
+					<div className="container">
+						{ children }
+					</div>
+				</main>
+				<footer>
+					©2023 { title }
+				</footer>
+			</div>
 		</>
 	)
 }
 
 Layout.defaultProps = {
-	title: 'Next FastAPI App',
-	description: 'Next FastAPI App',
+	title: 'Next FastAPI Todo App',
+	description: 'This is Next FastAPI Todo App',
 }
