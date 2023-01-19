@@ -15,13 +15,16 @@ html, body {
 	width: 100%;
     min-height: 100vh;
 	position: relative;
+	background: #e5e5e5;
 }
 
 header {
 	text-align: center;
     padding: 25px 0;
-	color: #161719;
-	display: block;
+    color: #fccf00;
+    display: block;
+    background: #fccf00;
+    -webkit-text-stroke: 1px #161719;
 }
 
 main {
@@ -33,15 +36,16 @@ main {
 }
 
 .container {
-	padding: 40px 0;
+	padding: 60px 0;
 }
 
 .grid {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	max-width: 800px;
+	flex-direction: column;
 	@media (max-width: 600px) {
 		width: 100%;
 		flex-direction: column;
@@ -49,7 +53,7 @@ main {
 }
 
 .card {
-	margin: 1rem;
+	width: 100%;
 	padding: 1.5rem;
 	text-align: left;
 	color: inherit;
@@ -57,11 +61,6 @@ main {
 	border: 1px solid #eaeaea;
 	border-radius: 10px;
 	transition: color 0.15s ease, border-color 0.15s ease;
-	max-width: 300px;
-	&:hover,&:focus,&:active {
-		color: #0070f3;
-		border-color: #0070f3;
-	}
 	h2 {
 		margin: 0 0 1rem 0;
 		font-size: 1.5rem;
@@ -71,6 +70,26 @@ main {
 		font-size: 1.25rem;
 		line-height: 1.5;
 	}
+}
+
+.datetime {
+	display: flex;
+}
+
+time {
+	margin-left: 5px;
+}
+.btn-create {
+	margin: 0 auto;
+    display: block !important;
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn {
+    width: 48%;
 }
 
 footer {

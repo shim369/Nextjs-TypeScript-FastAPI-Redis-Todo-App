@@ -1,8 +1,9 @@
 import { Button } from 'react-bootstrap';
+import * as Icon from 'react-bootstrap-icons';
 import axios from 'axios'
 import swal from 'sweetalert'
 import { useRouter } from 'next/router'
-
+import Moment from 'react-moment'
 
 export default function TodoItem({ todo }: any) {
 
@@ -46,17 +47,23 @@ export default function TodoItem({ todo }: any) {
 
 
     return (
-        <div className="card">
+        <div className="card mt-4">
             {todo.completed? <h2><del>{ todo.title }</del></h2> : <h2>{ todo.title }</h2>}
             <p>{ todo.description }</p>
-            <p className="text-muted">{ todo.time }</p>
-            <br />
+			<div className="mt-3 datetime">
+				<Icon.Clock />
+				<Moment format="YYYY/MM/DD">
+					{ todo.time }
+				</Moment>
+			</div>
+			<div className="mt-3 buttons">
             {todo.completed? 
-                <Button  variant="success" onClick={() => (updateTodo(todo.id))}>Completed</Button>
+                <Button variant="success" onClick={() => (updateTodo(todo.id))}>Completed</Button>
                 :
                 <Button variant="primary" onClick={() => (updateTodo(todo.id))}>Complete</Button>
             }
-            <Button className="m-3" variant="danger" onClick={() => (deleteTodo(todo.id))}>Delete</Button>
+            <Button variant="danger" onClick={() => (deleteTodo(todo.id))}>Delete</Button>
+			</div>
         </div>
     )
 }

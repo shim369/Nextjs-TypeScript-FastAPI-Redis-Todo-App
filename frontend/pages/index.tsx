@@ -9,6 +9,7 @@ type Props = {
 	todos?: string
 }
 
+
 export default function Home({ todos }: Props) {
 	const router = useRouter()
 
@@ -46,7 +47,7 @@ export default function Home({ todos }: Props) {
 		<>
 			<Layout>
 				<Row>
-					<Col md={{ span: 6, offset: 3 }}>
+					<Col>
 					<div className="card">
 						<Form onSubmit={registerUser}>
 						<Form.Group className="mb-3" controlId="title">
@@ -59,7 +60,7 @@ export default function Home({ todos }: Props) {
 							<Form.Control as="textarea" rows={3} placeholder="Description" />
 						</Form.Group>
 
-						<Button variant="primary" type="submit">
+						<Button className="btn-create" variant="primary" type="submit">
 							Create Todo
 						</Button>
 
