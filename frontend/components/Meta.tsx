@@ -1,7 +1,6 @@
 import Head from "next/head"
 
 type Props = {
-	children?: React.ReactNode
 	title?: string
 	description?: string
 }
